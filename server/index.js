@@ -11,6 +11,8 @@ const etherConfig = require(__dirname + '/../config/ether.json');
 // load models
 var models  = require('../models');
 var Promise = require('promise');
+// server port
+const port = process.env.PORT || 3000;
 
 // gaslimit and Price
 const gasLimit = 60000;
@@ -135,4 +137,4 @@ console.log("Current wallet:", walletAddress);
 provider.on(walletAddress, blockNumer => console.log("Balance changed in block", blockNumer));
 
 
-server({ port: 3000, security: { csrf: false } },createAddress,getAddress,transferToken);
+server({ port: port, security: { csrf: false } },createAddress,getAddress,transferToken);
