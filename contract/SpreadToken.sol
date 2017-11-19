@@ -31,7 +31,7 @@ contract SpreadToken {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
     // Constructor
-    function FixedSupplyToken() {
+    function SpreadToken() {
         owner = msg.sender;
         balances[owner] = _totalSupply;
     }
